@@ -1,6 +1,7 @@
 # Marcador Truco
 
 SPA para llevar el marcador del juego Truco (Argentina). Equipos **Nosotros** vs **Ellos**, partidas a 15 o 30 puntos.
+Este proyecto fue enteramente realizado con Cursor, para aprender las funcionalidades y el alcance del IDE.
 
 - Vite + React + Tailwind CSS
 - Despliegue en GitHub Pages con `gh-pages` (mismo enfoque que [react-gh-pages](https://github.com/gitname/react-gh-pages))
