@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fondo tipo mesa de madera (vetas con gradientes) */
+body {
+  min-height: 100vh;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #8b5a2b 0px,
+      #a0522d 2px,
+      #8b4513 4px,
+      #6b3410 6px,
+      #8b5a2b 8px,
+      #a0522d 10px,
+      #7a4a1f 12px,
+      #8b5a2b 14px
+    ),
+    linear-gradient(180deg, #5d3a1a 0%, #8b5a2b 30%, #6b3410 70%, #4a2c0a 100%);
+  background-size: 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}
