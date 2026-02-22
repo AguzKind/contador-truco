@@ -41,49 +41,55 @@ export default function App() {
   const hasWinner = winner !== null
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      {showModal && <StartModal onSelect={handleSelectTarget} />}
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1 flex flex-col items-center justify-center p-4 pb-24 sm:pb-8 min-h-0">
+        {showModal && <StartModal onSelect={handleSelectTarget} />}
 
-      {!showModal && (
-        <div className="w-full max-w-2xl rounded-2xl bg-black/50 bg-amber-950/60 backdrop-blur-md border border-amber-700/50 shadow-2xl p-8 flex flex-col items-center gap-8">
-          <p className="text-amber-200/90 text-sm">
-            Partida a {targetPoints} puntos
-          </p>
+        {!showModal && (
+          <div className="w-full max-w-2xl rounded-2xl bg-black/50 bg-amber-950/60 backdrop-blur-md border border-amber-700/50 shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center gap-4 sm:gap-6 md:gap-8">
+            <p className="text-amber-200/90 text-xs sm:text-sm">
+              Partida a {targetPoints} puntos
+            </p>
 
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
-            <ScoreCard
-              name="Nosotros"
-              score={nosotros}
-              onIncrement={() => handleNosotrosChange(1)}
-              onDecrement={() => handleNosotrosChange(-1)}
-              disabled={hasWinner}
-            />
-            <ScoreCard
-              name="Ellos"
-              score={ellos}
-              onIncrement={() => handleEllosChange(1)}
-              onDecrement={() => handleEllosChange(-1)}
-              disabled={hasWinner}
-            />
-          </div>
-
-          {hasWinner && (
-            <div className="flex flex-col items-center gap-4 w-full">
-              <p className="text-2xl font-bold text-amber-50">
-                ¡Ganaron {winner}!
-              </p>
-              <button
-                type="button"
-                onClick={handleReset}
-                className="px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-amber-50 font-semibold border-2 border-amber-500 transition-colors"
-                aria-label="Jugar de nuevo"
-              >
-                Jugar de nuevo
-              </button>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-8 w-full sm:flex-wrap sm:flex-initial">
+              <ScoreCard
+                name="Nosotros"
+                score={nosotros}
+                onIncrement={() => handleNosotrosChange(1)}
+                onDecrement={() => handleNosotrosChange(-1)}
+                disabled={hasWinner}
+              />
+              <ScoreCard
+                name="Ellos"
+                score={ellos}
+                onIncrement={() => handleEllosChange(1)}
+                onDecrement={() => handleEllosChange(-1)}
+                disabled={hasWinner}
+              />
             </div>
-          )}
-        </div>
-      )}
+
+            {hasWinner && (
+              <div className="flex flex-col items-center gap-3 sm:gap-4 w-full">
+                <p className="text-xl sm:text-2xl font-bold text-amber-50 text-center">
+                  ¡Ganadores: {winner}!
+                </p>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-amber-50 font-semibold border-2 border-amber-500 transition-colors touch-manipulation"
+                  aria-label="Jugar de nuevo"
+                >
+                  Jugar de nuevo
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+      </main>
+
+      <footer className="sticky bottom-0 left-0 right-0 py-3 px-4 text-center text-amber-200/80 text-sm bg-amber-950/70 backdrop-blur-sm border-t border-amber-700/30 safe-area-pb">
+        Creado con ❤️ por Aguzkind + Cursor
+      </footer>
     </div>
   )
 }

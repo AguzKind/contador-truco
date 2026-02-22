@@ -5,6 +5,7 @@
 /* Fondo tipo mesa de madera (vetas con gradientes) */
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background:
     repeating-linear-gradient(
       90deg,
@@ -20,4 +21,9 @@ body {
     linear-gradient(180deg, #5d3a1a 0%, #8b5a2b 30%, #6b3410 70%, #4a2c0a 100%);
   background-size: 100% 100%, 100% 100%;
   background-attachment: fixed;
+}
+
+/* Footer respeta safe area en móviles con notch/home indicator */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0.75rem);
 }
