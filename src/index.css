@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fondo tipo mesa de madera (vetas con gradientes) */
+/* Fuente Roboto y fondo tipo mesa de madera */
 body {
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   min-height: 100dvh;
   background:
@@ -25,5 +26,5 @@ body {
 
 /* Footer respeta safe area en móviles con notch/home indicator */
 .safe-area-pb {
-  padding-bottom: env(safe-area-inset-bottom, 0.75rem);
+  padding-bottom: max(env(safe-area-inset-bottom, 0), 1rem);
 }

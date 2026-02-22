@@ -36,6 +36,7 @@ export default function App() {
     setNosotros(0)
     setEllos(0)
     setWinner(null)
+    setShowModal(true)
   }
 
   const hasWinner = winner !== null
@@ -87,8 +88,8 @@ export default function App() {
         )}
       </main>
 
-      <footer className="sticky bottom-0 left-0 right-0 py-3 px-4 text-center text-amber-200/80 text-sm bg-amber-950/70 backdrop-blur-sm border-t border-amber-700/30 safe-area-pb">
-        Creado con ❤️ por Aguzkind + Cursor
+      <footer className="sticky bottom-0 left-0 right-0 min-h-[4rem] py-6 px-4 flex items-center justify-center text-amber-200/80 text-base sm:text-lg font-bold bg-amber-950/70 backdrop-blur-sm border-t border-amber-700/30 safe-area-pb">
+        Creado con ❤️ por AguzKind + Cursor
       </footer>
     </div>
   )
